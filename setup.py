@@ -1,6 +1,5 @@
 from picobuild import Extension, cythonize, get_cython_build_dir, setup
 
-
 extensions = cythonize(
     Extension(
         "cuuid.*",
