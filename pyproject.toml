@@ -1,0 +1,40 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+    "Cython",
+    "picobuild==0.0.5b1"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cuuid"
+description = "Low Level UUID Implementation for Python"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "ckirua", email = "aquipongoalgo.dsz@gmail.com" }]
+requires-python = ">=3.13"
+dynamic = ["version"]
+dependencies = [
+    "setuptools>=80.9.0",
+    "Cython",
+    "picobuild==0.0.5b1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "sphinx>=7.0.0", "sphinx-rtd-theme>=2.0.0"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "cuuid.__about__.__version__" }
+
+[tool.cibuildwheel]
+enable = ["cpython-freethreading"]
+build = "cp313-* cp314-* cp313t-* cp314t-*"
+build-frontend = "build[uv]"
