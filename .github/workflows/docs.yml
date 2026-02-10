@@ -1,4 +1,4 @@
-# Build Sphinx docs for cuuid (latest + version switcher from tags).
+# Build Sphinx docs for picoid (latest + version switcher from tags).
 
 name: Docs
 
@@ -84,9 +84,9 @@ jobs:
           {
             echo '<!DOCTYPE html><html><head><meta charset="utf-8">'
             echo '<meta http-equiv="refresh" content="0; url=latest/">'
-            echo '<title>cuuid</title>'
+            echo '<title>picoid</title>'
             echo '<style>body{font-family:system-ui,sans-serif;max-width:40em;margin:2em auto;padding:0 1em;line-height:1.5}a{color:#2980b9}ul{list-style:none;padding:0}li{margin:.5em 0}</style></head><body>'
-            echo '<h1>cuuid</h1><p>Redirecting to <a href="latest/">latest</a>…</p><p>Versions:</p><ul>'
+            echo '<h1>picoid</h1><p>Redirecting to <a href="latest/">latest</a>…</p><p>Versions:</p><ul>'
             for v in $VERS; do echo "<li><a href=\"$v/\">$v</a></li>"; done
             echo '</ul></body></html>'
           } > site/index.html

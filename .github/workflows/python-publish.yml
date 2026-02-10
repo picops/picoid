@@ -48,7 +48,7 @@ jobs:
       id-token: write
     environment:
       name: pypi
-      url: https://pypi.org/p/cuuid
+      url: https://pypi.org/p/picoid
 
     steps:
       - name: Retrieve release distributions
