@@ -1,4 +1,4 @@
-from cuuid import UUID, randstr_16, uuid4
+from picoid import UUID, randstr_16, uuid4
 
 if __name__ == "__main__":
     # Example 1: Create a UUID from a string

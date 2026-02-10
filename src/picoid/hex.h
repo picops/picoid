@@ -13,7 +13,7 @@
   {                                                                            \
     char byte = (buf)[0];                                                      \
     (dest)[0] = __hexm[(byte >> 4) & 0x0F];                                    \
-    (dest)[1] = __hexm[byte & 0x0F];                                           \
+    (dest)[1] = __hexm[byte & 0x0F];                                            \
   }
 
 #define HEX_2_BYTES(buf, dest)                                                 \
