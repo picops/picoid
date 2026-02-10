@@ -2,6 +2,17 @@ import uuid
 from typing import Any, Tuple, Union
 
 class UUID(uuid.UUID):
+    """
+    UUID type compatible with stdlib uuid.UUID, with fast C-backed storage.
+
+    Args:
+        - inp: A hyphenated UUID string (32 hex chars with optional hyphens)
+              or exactly 16 bytes.
+
+    Returns:
+        None (constructor).
+    """
+
     def __init__(self, inp: Union[str, bytes]) -> None: ...
     @property
     def bytes(self) -> bytes: ...
@@ -49,5 +60,26 @@ class UUID(uuid.UUID):
     @property
     def version(self) -> int: ...
 
-def randstr_16() -> bytes: ...
-def uuid4() -> UUID: ...
+def randstr_16() -> bytes:
+    """
+    Return 16 random bytes with UUID4 version/variant bits set.
+
+    Args:
+        (none)
+
+    Returns:
+        16 random bytes with UUID4 version/variant bits set (bytes).
+    """
+    ...
+
+def uuid4() -> UUID:
+    """
+    Generate a random UUID (version 4).
+
+    Args:
+        (none)
+
+    Returns:
+        A new random UUID4 instance (UUID).
+    """
+    ...

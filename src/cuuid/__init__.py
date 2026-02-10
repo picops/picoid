@@ -1,3 +1,9 @@
+"""
+Low-level UUID implementation for Python.
+
+Exposes UUID (compatible with stdlib uuid.UUID), uuid4(), and randstr_16().
+"""
+
 from typing import Tuple
 
 from .__about__ import __version__

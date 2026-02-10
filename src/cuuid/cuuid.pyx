@@ -4,6 +4,13 @@
 # This module is part of asyncpg and is released under
 # the Apache 2.0 License: http://www.apache.org/licenses/LICENSE-2.0
 
+"""
+Cython implementation of UUID, uuid4, and randstr_16.
+
+Provides a fast UUID type compatible with stdlib uuid.UUID and helpers
+for generating random UUIDs or 16-byte values.
+"""
+
 import uuid
 
 cimport cpython
@@ -106,6 +113,17 @@ cdef UUID uuid_from_buf(const char *buf):
 @cython.final
 @cython.no_gc_clear
 cdef class UUID(__UUIDReplaceMe):
+    """
+    UUID type compatible with stdlib uuid.UUID, with fast C-backed storage.
+
+    Args:
+        - inp: A hyphenated UUID string (32 hex chars with optional hyphens)
+              or exactly 16 bytes.
+
+    Returns:
+        None (constructor).
+    """
+
     def __cinit__(self):
         self._int = None
         self._hash = None
@@ -323,6 +341,15 @@ cdef pg_UUID = UUID
 
 
 cpdef bytes randstr_16():
+    """
+    Return 16 random bytes with UUID4 version/variant bits set.
+
+    Args:
+        (none)
+
+    Returns:
+        16 random bytes with UUID4 version/variant bits set (bytes).
+    """
     cdef:
         unsigned char dest[16]
         bytes result
@@ -332,6 +359,15 @@ cpdef bytes randstr_16():
     return result
 
 cpdef UUID uuid4():
+    """
+    Generate a random UUID (version 4).
+
+    Args:
+        (none)
+
+    Returns:
+        A new random UUID4 instance (UUID).
+    """
     cdef:
         unsigned char dest[16]
         UUID result

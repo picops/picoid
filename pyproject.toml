@@ -3,7 +3,7 @@ requires = [
     "setuptools",
     "wheel",
     "Cython",
-    "picobuild"
+    "picobuild==0.0.5b1"
 ]
 build-backend = "setuptools.build_meta"
 
@@ -19,7 +19,7 @@ dynamic = ["version"]
 dependencies = [
     "setuptools>=80.9.0",
     "Cython",
-    "picobuild",
+    "picobuild==0.0.5b1",
 ]
 
 [project.optional-dependencies]
@@ -28,6 +28,9 @@ dev = ["pytest>=8.0.0", "sphinx>=7.0.0", "sphinx-rtd-theme>=2.0.0"]
 [tool.setuptools]
 include-package-data = true
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.setuptools.dynamic]
 version = { attr = "cuuid.__about__.__version__" }
 
@@ -35,11 +38,3 @@ version = { attr = "cuuid.__about__.__version__" }
 enable = ["cpython-freethreading"]
 build = "cp313-* cp314-* cp313t-* cp314t-*"
 build-frontend = "build[uv]"
-
-# Install Arrow (arrow-devel) + libzip so the linker finds libarrow; setup.py adds system Arrow lib dirs via pkg-config.
-# [tool.cibuildwheel.linux]
-# before-build = """
-#   ( command -v dnf >/dev/null && ( dnf install -y epel-release || true ) && dnf install -y https://packages.apache.org/artifactory/arrow/almalinux/8/apache-arrow-release-latest.rpm && dnf install -y arrow-devel libzip-devel ) ||
-#   ( command -v yum >/dev/null && ( yum install -y epel-release || true ) && yum install -y https://packages.apache.org/artifactory/arrow/centos/7/apache-arrow-release-latest.rpm && yum install -y --enablerepo=epel arrow-devel libzip-devel ) ||
-#   ( command -v apk >/dev/null && apk add --no-cache libzip-dev )
-#   """
