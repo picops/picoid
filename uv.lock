@@ -216,15 +216,16 @@ wheels = [
 
 [[package]]
 name = "picobuild"
-version = "0.0.5b1"
+version = "0.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7a/f3/fed377ce5057e4ce35119cfe126ca8a83999944418951fb8fc1f96a20a7a/picobuild-0.0.5b1.tar.gz", hash = "sha256:a02bf5c3541d0ca09091d10026fc30a7484d0f18c708e16a9ee6ad82f7d38f30", size = 6032, upload-time = "2026-02-06T17:01:23.366Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3c/92/a4e922873cae6ae9798b02af3edcf3829072ed12fa1eb9a2b193f57c22c8/picobuild-0.1.0.tar.gz", hash = "sha256:ae8671485f0b0128a0b8bcbb6ba3b13763cc10c31ab3e537429e0556a04fe1bd", size = 6826, upload-time = "2026-02-12T22:24:50.825Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/16/70/b762ba638d8aa96a25da9e8ba00c97ac86849c36e4c504efc8ba2abdb70c/picobuild-0.0.5b1-py313-none-any.whl", hash = "sha256:92dd74e257264acbea95154f5a68b9aa87e08a25fff223b9bb22a50298da7cf7", size = 6270, upload-time = "2026-02-06T17:01:19.841Z" },
-    { url = "https://files.pythonhosted.org/packages/23/d6/eb6c0cd2f26e6ec4eb7b96926470d15d838f6dbf8d0ee3c8780a245581a5/picobuild-0.0.5b1-py314-none-any.whl", hash = "sha256:e44159236041899e03fc54854b32001e002be1c59a4d0c9edc1461213ac9dc3e", size = 6270, upload-time = "2026-02-06T17:01:21.535Z" },
+    { url = "https://files.pythonhosted.org/packages/94/de/008779a36e2bc5877f4c0f6959ff9029add674d15189c77afe8bf9d54b6f/picobuild-0.1.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:ebe2bffc71b8d99636b96b7eead9d7cdee78e6157b97a0de20ae7c8eb189c1cf", size = 6304, upload-time = "2026-02-12T22:24:46.854Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/19/76e5e3e61ad1a84af228ec7410d71a4260434f4805c882293461a4a8222b/picobuild-0.1.0-cp313t-cp313t-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:51c203a0b0c112161221b1f5a62f5a543ef912b11cf77dd819e40b5207e9a1e3", size = 6304, upload-time = "2026-02-12T22:24:48.3Z" },
+    { url = "https://files.pythonhosted.org/packages/10/78/3eda4e4b7c6b170d7c8af85cbc95c9d6ff393849c34855cdfe6e8a88179e/picobuild-0.1.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:9d96a5e96308d69bdb93ffe57aaac4d7c9dfce9a68dc856648dcb76fbce57a0b", size = 6304, upload-time = "2026-02-12T22:24:49.661Z" },
 ]
 
 [[package]]
@@ -246,7 +247,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "cython" },
-    { name = "picobuild", specifier = "==0.0.5b1" },
+    { name = "picobuild", specifier = ">=0.1.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0" },
     { name = "setuptools", specifier = ">=80.9.0" },
     { name = "sphinx", marker = "extra == 'dev'", specifier = ">=7.0.0" },

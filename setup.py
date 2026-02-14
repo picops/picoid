@@ -1,4 +1,4 @@
-from picobuild import Extension, cythonize, get_cython_build_dir, setup
+from picobuild import Extension, cythonize, get_cython_build_dir, setup, find_packages
 
 extensions = cythonize(
     Extension(
@@ -19,7 +19,7 @@ extensions = cythonize(
 
 if __name__ == "__main__":
     setup(
-        name="picoid",
-        version="0.0.1",
-        ext_modules=extensions,
+        packages=find_packages(where="src"),
+        package_dir={"": "src"},
+        ext_modules=extensions
     )
